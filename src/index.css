@@ -1,13 +1,86 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary: #874C62;
+  --secondary: #C98474;
+  --secondary-light: #F2D388;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.about{
+  display: flex;
 }
+
+.nav{
+  background-color: #A7D2CB;
+
+}
+
+h1.title{
+  font-size: 30px;
+}
+
+h2.title{
+  font-size: 20px;
+}
+
+#basic-navbar-nav{
+  text-align: right;
+}
+
+h1{
+  text-align: center;
+}
+
+input + button{
+  margin-left: 5px;
+}
+
+form{
+  display: flex;
+  align-items: center;
+  padding: 25px;
+}
+
+label{
+  font-size: 25px;
+}
+
+input{
+  flex-grow: 1;
+  width: 100%;
+  height: 40px;
+  background-color: var(--secondary-light);
+  border: 5px var(--secondary-light);
+  border-radius: 5px;
+}
+
+/* input::placeholder{
+  color:white;
+} */
+
+button{
+  background-color: #A7D2CB;
+  border: 5px #A7D2CB;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+}
+
+.card-container{
+  justify-content: center;
+}
+
+.card-items{
+  background-color: var(--primary);
+  color: white;
+  border-radius: 15px;
+}
+
+.card-items:hover{
+  background-color: var(--secondary);
+  transform: scale(1.05);
+}
+
+a{
+  text-decoration: none;
+}
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
