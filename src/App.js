@@ -102,7 +102,7 @@ function App() {
     <div className="App">
       <Navigation />
       <main>
-        <Route path="/" exact render={()=> <Home /> }/>
+        <Route path="/" exact render={()=> <Home sampleData={sampleData}/> }/>
         <Route path="/about" exact render={()=> <About /> }/>
         <Route path="/search" exact render={()=> <Search sampleData={sampleData}/> }/>
         <Route path="/recipe/:label" exact render={()=> <Recipe sampleData={sampleData}/> }/>

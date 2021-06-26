@@ -8,8 +8,9 @@ export default function Recipe({sampleData}){
                     <div key={i}>
                         <h1>{data.label}</h1>
                         <img src={data.image} alt={data.label} />
-                        <p>This recipe can be found <a href={data.url}>here.</a></p>
+                        <p>This recipe can be found <a href={data.url}target='_blank'>here.</a></p>
                         <ul className='ingredients'>
+                            <h4>Ingredients:</h4>
                             {data.ingredientLines.map((ingredient, i)=>{
                             return(
                                 <li key={i}>
@@ -19,6 +20,7 @@ export default function Recipe({sampleData}){
                             })}
                         </ul>
                         <ul className="diet-labels">
+                            <h4>Diet Labels:</h4>
                             {data.dietLabels.map((label, i)=>{
                                 return(
                                     <li key={i}>

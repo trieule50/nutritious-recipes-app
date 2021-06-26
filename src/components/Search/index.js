@@ -4,11 +4,11 @@ export default function Search({ sampleData }) {
     return(
         <div className='search'>
             <form>
-                <label htmlFor='searchQuery'>SEARCH:</label>
+                <label htmlFor='searchQuery'>🔍</label>
                 <input 
                 type='text'
                 id='searchQuery'
-                placeholder='Enter an ingredient to be in dish'
+                placeholder='Search for an ingredient'
                  />
                 <button type='submit'>FIND</button>
             </form>
