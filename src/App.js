@@ -1,4 +1,5 @@
 import { Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 import Navigation from './components/Navigation';
@@ -98,13 +99,14 @@ const sampleData = [
 ]
 
 function App() {
+
   return (
     <div className="App">
       <Navigation />
       <main>
-        <Route path="/" exact render={()=> <Home sampleData={sampleData}/> }/>
+        <Route path="/" exact render={()=> <Home/> }/>
         <Route path="/about" exact render={()=> <About /> }/>
-        <Route path="/search" exact render={()=> <Search sampleData={sampleData}/> }/>
+        <Route path="/search" exact render={()=> <Search />}/>
         <Route path="/recipe/:label" exact render={()=> <Recipe sampleData={sampleData}/> }/>
       </main>
     </div>

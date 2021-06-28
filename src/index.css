@@ -15,8 +15,8 @@ a{
 }
 
 .about-items{
-  border: 3px solid white;
-  border-radius: 25px;
+  /* border: 3px solid white;
+  border-radius: 25px; */
   padding: 5px;
   margin-top: 25px;
 }
@@ -26,7 +26,7 @@ a{
 }
 
 body{
-  background: radial-gradient(90% 50%, white, rgb(166,182,206));
+  background: radial-gradient( white, rgb(166,182,206));
 }
 
 button{
@@ -37,6 +37,10 @@ button{
   height: 40px;
   letter-spacing: 2px;
   
+}
+
+button > img{
+  width: 2rem;
 }
 
 .card-container{
@@ -123,6 +127,10 @@ label{
   letter-spacing: 1px;
   font-style: italic;
   margin-right: 5px;
+}
+
+label > img{
+  width: 3rem;
 }
 
 li{

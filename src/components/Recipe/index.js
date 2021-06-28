@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Recipe({sampleData}){
+export default function Recipe({ sampleData}){
     return (
         <div>
             {sampleData.map((data, i) =>{
@@ -29,7 +29,7 @@ export default function Recipe({sampleData}){
                                 )
                             })}
                         </ul>
-                        <p>Calories{data.calories}</p>
+                        <p>Calories: {data.calories.toFixed(2)}</p>
                         <p>This recipe yield: {data.yield}</p>
                     </div>
                 )
