@@ -31,20 +31,26 @@ In this case, all of the event listens and the main API calls was done in the 'A
 
 #### Focusing on User Experience
 
+#### Lessons Learned
+1. Cut problems into smaller pieces and console.log any unknown data. By writing small lines of code and console.log any data, I understood where the bug located and what output I was receiving. 
+
 ## Problem Areas
 1. One of the problem area was the API call being blocked by the CORS poilcy. 
 
-2. Understanding conditional rendering
+2. Understanding conditional rendering.
 
 ## Future Directions
 
 ## Accomplishments
+- Cook Assistant is fully functional App.
+- The app is responsive.
 
 ## References
-- [Edamam API] (https://www.edamam.com/)
-- [Cutting Board Photo] (https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)
-- [React] (https://reactjs.org/)
-- [Icon] (https://www.flaticon.com/authors/smashicons)
+- [Edamam API](https://www.edamam.com/)
+- [Cutting Board Photo](https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)
+- [React](https://reactjs.org/)
+- [Icon](https://www.flaticon.com/authors/smashicons)
+- [CSS Tricks](https://css-tricks.com/)
 
 
 <!-- # Getting Started with Create React App
