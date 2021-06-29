@@ -4,7 +4,7 @@
 ## Project Description
 Cook Assistant is a working, interactive, React application that recieved data from Edamam, the third-party API. The app allows users to find a recipe that fits their dietary needs and search for any key ingredient that the user wants in the recipe. Click on the link below and start cooking!
 
-**Link To Site:** ADD WHEN APP DEPLOY
+**Link To Site:** https://cook-assistant.netlify.app/
 
 ### Programs/Application Used:
 - React

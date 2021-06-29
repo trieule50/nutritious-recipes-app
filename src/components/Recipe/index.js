@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
 
 export default function Recipe( routeProps ){
-    // console.log(routeProps)
+    console.log(routeProps)
 
     const [uniqueRecipe, setUniqueRecipe] = useState(null);
     const name = routeProps.match.params.recipe+routeProps.match.params.label;
-    // const { recipe } = routeProps.recipes
-    // console.log(name);
-    // console.log(routeProps.searchOptions); 
 
     const getApiData = async () =>{
         const apiEndPoint = `${routeProps.searchOptions.api}q=${name}&app_id=${routeProps.searchOptions.id}&app_key=${routeProps.searchOptions.key}&health=${routeProps.searchHealth}`

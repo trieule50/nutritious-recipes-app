@@ -11,19 +11,24 @@ import Recipe from './components/Recipe';
 function App() {
 
   const [searchString, setSearchString] = useState('');
-  const [searchHealth, setSearchHealth] = useState('low-sugar');
+  const [searchHealth, setSearchHealth] = useState('vegan');
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleChange = (event) =>{
+  const handleQueryChange = (event) =>{
     setSearchString(event.target.value);
   }
 
-  const handleSubmit = (event) => {
+  const handleQuerySubmit = (event) => {
     event.preventDefault();
-    getApiData(searchString);
+    console.log(getApiData(searchString, searchHealth));
     setSearchString('')
+  }
+
+  const handleSelect = (event) =>{
+    console.log(event)
+    setSearchHealth(event.target.value)
   }
 
   const searchOptions = {
@@ -34,6 +39,7 @@ function App() {
 
   const getApiData = async () =>{
     const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
+    console.log(apiEndPoint);
       if(searchString){
         try{
           const response = await fetch(apiEndPoint, {
@@ -55,6 +61,7 @@ function App() {
   }
     console.log(recipes);
     console.log(error);
+    console.log(searchHealth);
 
     useEffect(()=>{
         getApiData();
@@ -68,8 +75,9 @@ function App() {
         <Route path="/search" exact render={()=> <Search 
           searchString={searchString} 
           recipes={recipes} 
-          handleSubmit={handleSubmit} 
-          handleChange={handleChange} 
+          handleQuerySubmit={handleQuerySubmit} 
+          handleQueryChange={handleQueryChange} 
+          handleSelect={handleSelect}
           search={search} 
           error={error}/>
         }/>

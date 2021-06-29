@@ -4,6 +4,9 @@ import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 
 export default function Recipes({ recipes }) {
+    if (!recipes){
+        return <h1>Loading...</h1>;
+    }else{
     return(
         <div className='displayArea'>
             <CardColumns style={{
@@ -31,5 +34,5 @@ export default function Recipes({ recipes }) {
             </CardColumns>
             <div className='space'></div>
         </div>
-    )
+    )}
 }
