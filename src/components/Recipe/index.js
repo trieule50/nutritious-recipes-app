@@ -25,6 +25,10 @@ export default function Recipe( routeProps ){
     useEffect(()=>{
         getApiData();
     },[])
+    
+    const handleClick = (event) =>{
+        window.open(`${uniqueRecipe.url}`)
+      }
 
     if (!uniqueRecipe){
         return <h1>Loading...</h1>;
@@ -33,6 +37,7 @@ export default function Recipe( routeProps ){
         <div className='recipe'>
             <h1>{name}</h1>
             <img src={uniqueRecipe.image} alt={uniqueRecipe.label}/>
+            <p>This recipe was souced by <span style={{fontStyle:'italic', fontWeight:'bold'}}>{uniqueRecipe.source}</span></p>
             <p>{uniqueRecipe.calories.toFixed(2)} Calories |  {uniqueRecipe.yield} Servings</p>
             <div className='list'>
                 <ul className='ingredients'>
@@ -56,6 +61,7 @@ export default function Recipe( routeProps ){
                     })}
                 </ul>
             </div>
+            <h4>Nutrient Facts:</h4>
             <table>
                 <tr>
                     <th>Nutrients</th>
@@ -98,8 +104,7 @@ export default function Recipe( routeProps ){
                     <td>{uniqueRecipe.totalNutrients.K.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.K.unit}</td>
                 </tr>
             </table>
-            
-            <p>This recipe can be found <a href={uniqueRecipe.url}target='_blank'>here.</a></p>
+            <button onClick={handleClick} className='link'>Click for Full Recipe</button>
             <div className='space'></div>
     </div>
     )

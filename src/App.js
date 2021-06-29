@@ -23,34 +23,34 @@ function App() {
   const handleQuerySubmit = (event) => {
     event.preventDefault();
     console.log(getApiData(searchString, searchHealth));
-    setSearchString('')
   }
-
+  
   const handleSelect = (event) =>{
     console.log(event)
     setSearchHealth(event.target.value)
   }
-
+  
   const searchOptions = {
     key: process.env.REACT_APP_EDAMAM_KEY,
     id: process.env.REACT_APP_EDAMAM_ID,
     api: 'https://api.edamam.com/api/recipes/v2?type=public&'
   }
-
+  
   const getApiData = async () =>{
     const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
     console.log(apiEndPoint);
-      if(searchString){
-        try{
-          const response = await fetch(apiEndPoint, {
-            mode: 'cors'
-          });
-          const data = await response.json();
-          // console.log(data);
-          setError(false);
-          setRecipes(data.hits);
-          setSearch(true);
-          if (!recipes.length){
+    if(searchString){
+      try{
+        const response = await fetch(apiEndPoint, {
+          mode: 'cors'
+        });
+        const data = await response.json();
+        // console.log(data);
+        setError(false);
+        setRecipes(data.hits);
+        setSearch(true);
+        setSearchString('')
+          if (!data.hits.length){
             setError(true);
           }
         }catch(error){
@@ -59,13 +59,14 @@ function App() {
         }
       }
   }
-    console.log(recipes);
+    // console.log(recipes);
     console.log(error);
-    console.log(searchHealth);
+    // console.log(searchHealth);
 
-    useEffect(()=>{
-        getApiData();
-    },[])
+    // useEffect(()=>{
+    //     getApiData();
+    // },[])
+
     return (
     <div className="App">
       <Navigation />
