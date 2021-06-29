@@ -11,7 +11,6 @@ export default function About(){
             <div className='about-items'>
                 <img src='https://www.edamam.com/web-img/643/643d4bad9cc21284f7f52b1b9b862848.jpg' alt='Green Tea' />
             </div>
-            {/* <div id="edamam-badge" data-color="white"></div> */}
         </div>
         </>
     )

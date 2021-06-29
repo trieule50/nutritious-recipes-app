@@ -2,8 +2,7 @@ import Recipes from "../Recipes";
 import { useState, useEffect } from 'react';
 import meal from './meal.png';
 
-export default function Search({ recipes, handleChange, handleSubmit, searchString }) {
-
+export default function Search({ recipes, handleChange, handleSubmit, searchString, search, error}) {
     return(
         <div className='search'>
             <form onSubmit={handleSubmit}>
@@ -17,7 +16,14 @@ export default function Search({ recipes, handleChange, handleSubmit, searchStri
                  />
                 <button type='submit'>FIND</button>
             </form>
-            <Recipes recipes={recipes}/>
+            {search && !error &&(
+                <Recipes 
+                recipes={recipes}
+            />
+            )}
+            {search && error && (
+                <h1>error</h1>
+            )}    
         </div>
     )
 }

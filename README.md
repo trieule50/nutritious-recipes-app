@@ -6,11 +6,12 @@ Cook Assistant is a working, interactive, React application that recieved data f
 
 **Link To Site:** ADD WHEN APP DEPLOY
 
-### Programs Used:
+### Programs/Application Used:
 - React
 - BootStrap
 - JSX
 - CSS
+- Yarn
 
 ## Learning Experience
 
@@ -25,9 +26,64 @@ One of the key feature of React is the compostion of the components. Similar to 
 
 The Component Hierarchy diagram, above, represents of how the components are struture in this app. In the Cook Assistant App, there are 7 components. Each being a child of the 'App' components, minus the 'Recipes' and 'Recipe'.
 
-In this case, all of the event listens and the main API calls was done in the 'App.js' file and is passed down to the 
+In this case, all of the event listeners and the main API calls was done in the 'App.js' file and is passed down to the Search Components, then to Recipes and Recipe. 
 
 #### Dynamic API Calls
+
+By using Edamam, the third party API, the App is able to make dynamic request. For this app, the recipes endpoint was used. So different props variables were created to make multiple calls. 
+
+One of the element added was the 'mode'. Please reference to Problem Areas of this README for more information. 
+
+```JS
+const searchOptions = {
+        key: process.env.REACT_APP_EDAMAM_KEY,
+        id: process.env.REACT_APP_EDAMAM_ID,
+        api: 'https://api.edamam.com/api/recipes/v2?type=public&'
+    }
+
+    const getApiData = async () =>{
+        const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
+        try{
+            const response = await fetch(apiEndPoint, {
+                mode: 'cors'
+            });
+            const data = await response.json();
+            // console.log(data);
+            setRecipes(data.hits);
+        }catch(error){
+            console.log(error)
+        }
+    }
+```
+
+Reference to the Edamam site for more documentation on the API call. 
+
+A second API call was made in the Recipe component. Since there is a route for each individual recipe, each recipe had to match the id. In this case, params was an object that had the key 'recipe' and 'label'. By concat the value, the name matched the id. This allow only one recipe to be render and used.
+
+```JS
+const [uniqueRecipe, setUniqueRecipe] = useState(null);
+    const name = routeProps.match.params.recipe+routeProps.match.params.label;
+
+    const getApiData = async () =>{
+        const apiEndPoint = `${routeProps.searchOptions.api}q=${name}&app_id=${routeProps.searchOptions.id}&app_key=${routeProps.searchOptions.key}&health=${routeProps.searchHealth}`
+        try{
+            const response = await fetch(apiEndPoint, {
+                mode: 'cors'
+            });
+            const data = await response.json();
+            // console.log(data);
+            setUniqueRecipe(data.hits[0].recipe);
+        }catch(error){
+            console.log(error)
+        }
+    }
+
+    console.log(uniqueRecipe);
+
+    useEffect(()=>{
+        getApiData();
+    },[])
+```
 
 #### Focusing on User Experience
 
@@ -35,9 +91,37 @@ In this case, all of the event listens and the main API calls was done in the 'A
 1. Cut problems into smaller pieces and console.log any unknown data. By writing small lines of code and console.log any data, I understood where the bug located and what output I was receiving. 
 
 ## Problem Areas
-1. One of the problem area was the API call being blocked by the CORS poilcy. 
+1. One of the problem area was the API call being blocked by the CORS poilcy. Cross-origin resource sharing (CORS) allows the server to indicate other origins. To bypass the error, mode is a read only property that contains different type of mofe of request, one of which is 'cors'.
 
-2. Understanding conditional rendering.
+```JS
+const getApiData = async () =>{
+        const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
+        try{
+            const response = await fetch(apiEndPoint, {
+                mode: 'cors'
+            });
+            const data = await response.json();
+            // console.log(data);
+            setRecipes(data.hits);
+        }catch(error){
+            console.log(error)
+        }
+    }
+```
+
+2. Understanding conditional rendering. One of the issue is having fetch statement running before my JSX. To prevent that from happening, conditional rending to show a loading message to allow the request to catch up. 
+
+```JS
+if (!uniqueRecipe){
+        return <h1>Loading...</h1>;
+    }else{
+    return (
+        <div className='recipe'>
+            <h1>{name}</h1>
+            <img src={uniqueRecipe.image} alt={uniqueRecipe.label}/>
+```
+
+3. Error Message for Bad Strings. 
 
 ## Future Directions
 

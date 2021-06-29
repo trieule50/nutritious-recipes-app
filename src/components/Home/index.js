@@ -68,6 +68,7 @@ export default function Home() {
                     )
                 })}
             </Carousel>
+            <div className='stretch'></div>
         </div>
     )
 }

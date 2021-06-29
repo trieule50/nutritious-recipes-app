@@ -11,55 +11,78 @@ import Recipe from './components/Recipe';
 function App() {
 
   const [searchString, setSearchString] = useState('chicken');
-    const [searchHealth, setSearchHealth] = useState('low-sugar');
-    const [recipes, setRecipes] = useState([]);
+  const [searchHealth, setSearchHealth] = useState('low-sugar');
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState(false);
+  const [error, setError] = useState(false);
 
-    const handleChange = (event) =>{
-        setSearchString(event.target.value);
-    }
+  const handleChange = (event) =>{
+    setSearchString(event.target.value);
+  }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        getApiData(searchString);
-        setSearchString('')
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    getApiData(searchString);
+    setSearchString('')
+  }
 
-    }
+  const searchOptions = {
+    key: process.env.REACT_APP_EDAMAM_KEY,
+    id: process.env.REACT_APP_EDAMAM_ID,
+    api: 'https://api.edamam.com/api/recipes/v2?type=public&'
+  }
 
-    const searchOptions = {
-        key: process.env.REACT_APP_EDAMAM_KEY,
-        id: process.env.REACT_APP_EDAMAM_ID,
-        api: 'https://api.edamam.com/api/recipes/v2?type=public&'
-    }
-
-    const getApiData = async () =>{
-        const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
+  const getApiData = async () =>{
+    const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
+      if(searchString){
         try{
-            const response = await fetch(apiEndPoint, {
-                mode: 'cors'
-            });
-            const data = await response.json();
-            // console.log(data);
-            setRecipes(data.hits);
+          const response = await fetch(apiEndPoint, {
+            mode: 'cors'
+          });
+          const data = await response.json();
+          // console.log(data);
+          setError(false);
+          setRecipes(data.hits);
+          setSearch(true);
+          if (!recipes.length){
+            setError(true);
+          }
         }catch(error){
-            console.log(error)
+            console.log(error);
+            setError(true);
         }
-    }
-
-    // console.log(recipes);
+      }
+  }
+    console.log(recipes);
+    console.log(error);
 
     useEffect(()=>{
         getApiData();
     },[])
-
-  return (
+    return (
     <div className="App">
       <Navigation />
       <main>
         <Route path="/" exact render={()=> <Home/> }/>
         <Route path="/about" exact render={()=> <About /> }/>
-        <Route path="/search" exact render={()=> <Search searchString={searchString} recipes={recipes} handleSubmit={handleSubmit} handleChange={handleChange}/>}/>
-        <Route path="/recipe/:recipe:label" exact render={( routeProps )=> <Recipe {...routeProps} searchOptions={searchOptions} searchHealth={searchHealth}/> }/>
+        <Route path="/search" exact render={()=> <Search 
+          searchString={searchString} 
+          recipes={recipes} 
+          handleSubmit={handleSubmit} 
+          handleChange={handleChange} 
+          search={search} 
+          error={error}/>
+        }/>
+        <Route path="/recipe/:recipe:label" exact render={( routeProps )=> <Recipe 
+          {...routeProps} 
+          searchOptions={searchOptions} 
+          searchHealth={searchHealth}/> 
+        }/>
       </main>
+      <footer>
+        <div id="edamam-badge" data-color="white"></div>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      </footer>
     </div>
   );
 }

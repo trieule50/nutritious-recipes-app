@@ -53,6 +53,7 @@ button > img{
   border-radius: 15px;
 }
 
+
 .card-items:hover{
   background-color: var(--secondary);
   transform: scale(1.05);
@@ -87,7 +88,7 @@ form{
 }
 
 /* typing animation from css-tricks.com */
-.fun-animation h4{
+.fun-animation > h4{
   /* Content stays hidden until animation revealed itself */
   overflow: hidden; 
   border-right: .15em solid white;
@@ -95,17 +96,17 @@ form{
   color: white;
   margin: 0 auto;
   letter-spacing: .15em;
-  animation: typing 3.5s steps(40, end),
+  animation: typing 4s steps(50, end),
   blink-caret .75s step-end infinite;
-  background-color: black;
-  height: 25rem;
-  background-image: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
 }
 
-.fun-animation::before{
+.fun-animation{
+  background-image: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
   background-size: cover;
   position: absolute;
   opacity: .75;
+  width: 100%;
+  height: 25rem;
 }
 
 @keyframes typing{
@@ -116,6 +117,21 @@ form{
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: white}
+}
+
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5.5rem;
+  background-color: rgb(235, 132, 95);
+  color: white;
+  text-align: center;
+}
+
+footer > div{
+  margin: 25px auto;
 }
 
 h1.title, h1{
@@ -169,17 +185,39 @@ li{
   font-family: 'Dosis', sans-serif;
 }
 
-p{
-  font-family: 'Dosis', sans-serif;
-  line-height: 30px;
+.list{
+  display: flex;
+  justify-content: space-around;
 }
 
 .nav{
   background-color:  rgb(77,127,147);
 }
 
+p{
+  font-family: 'Dosis', sans-serif;
+  line-height: 30px;
+}
+
+.recipe{
+  text-align: center;
+}
+
+.recipe > img{
+  display: block;
+  margin: auto;
+}
+
+.stretch{
+  height: 25rem;
+}
+
 .sr-only{
   display: none;
+}
+
+table{
+  margin: auto;
 }
 
 ul{
