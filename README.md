@@ -1,3 +1,49 @@
+# Cook Assitant
+![Image of Cutting Board](https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80)
+
+## Project Description
+Cook Assistant is a working, interactive, React application that recieved data from Edamam, the third-party API. The app allows users to find a recipe that fits their dietary needs and search for any key ingredient that the user wants in the recipe. Click on the link below and start cooking!
+
+**Link To Site:** ADD WHEN APP DEPLOY
+
+### Programs Used:
+- React
+- BootStrap
+- JSX
+- CSS
+
+## Learning Experience
+
+### Setting Up Project
+One of the key feature of React is the compostion of the components. Similar to function in vanilla Javascript, components are reuseable function in React. Before diving into the creating the app, understanding the components hierarchy. 
+
+![Component Hierarchy 001](https://media.git.generalassemb.ly/user/36270/files/e39c6980-d50a-11eb-8f71-9302d491dad6) 
+
+### Setting Up Core Structure
+
+#### React Components
+
+The Component Hierarchy diagram, above, represents of how the components are struture in this app. In the Cook Assistant App, there are 7 components. Each being a child of the 'App' components, minus the 'Recipes' and 'Recipe'.
+
+In this case, all of the event listens and the main API calls was done in the 'App.js' file and is passed down to the 
+
+#### Dynamic API Calls
+
+#### Focusing on User Experience
+
+## Problem Areas
+1. One of the problem area was the API call being blocked by the CORS poilcy. 
+
+2. Understanding conditional rendering
+
+## Future Directions
+
+## Accomplishments
+
+## References
+- [Edamam API] (https://www.edamam.com/)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
