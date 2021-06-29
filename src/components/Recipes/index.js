@@ -5,7 +5,7 @@ import CardColumns from 'react-bootstrap/CardColumns';
 
 export default function Recipes({ recipes }) {
     return(
-        <div>
+        <div className='displayArea'>
             <CardColumns style={{
                             display: 'flex',
                             flexWrap: 'wrap',
@@ -29,6 +29,7 @@ export default function Recipes({ recipes }) {
                 )
             })}
             </CardColumns>
+            <div className='space'></div>
         </div>
     )
 }

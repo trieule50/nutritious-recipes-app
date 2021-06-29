@@ -10,7 +10,7 @@ import Recipe from './components/Recipe';
 
 function App() {
 
-  const [searchString, setSearchString] = useState('chicken');
+  const [searchString, setSearchString] = useState('');
   const [searchHealth, setSearchHealth] = useState('low-sugar');
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(false);

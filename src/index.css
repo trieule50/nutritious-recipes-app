@@ -81,6 +81,10 @@ button > img{
   border-radius: 5px;
 }
 
+.displayArea{
+  height: 50rem;
+}
+
 form{
   display: flex;
   align-items: center;
@@ -120,18 +124,17 @@ form{
 }
 
 footer{
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 5.5rem;
   background-color: rgb(235, 132, 95);
   color: white;
   text-align: center;
 }
 
 footer > div{
-  margin: 25px auto;
+  margin: 20px auto;
 }
 
 h1.title, h1{
@@ -208,8 +211,8 @@ p{
   margin: auto;
 }
 
-.stretch{
-  height: 25rem;
+.stretch, .space{
+  height: 20rem;
 }
 
 .sr-only{
@@ -218,6 +221,21 @@ p{
 
 table{
   margin: auto;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+th, tr{
+  padding: 18px;
+  background-color: var(--secondary);
+  color: white;
+  border: 1px solid black;
+}
+
+th{
+  text-align: left;
+  border: none;
 }
 
 ul{

@@ -1,5 +1,4 @@
 import Recipes from "../Recipes";
-import { useState, useEffect } from 'react';
 import meal from './meal.png';
 
 export default function Search({ recipes, handleChange, handleSubmit, searchString, search, error}) {
