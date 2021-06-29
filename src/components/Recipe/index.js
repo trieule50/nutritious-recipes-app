@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export default function Recipe( routeProps ){
     // console.log(routeProps)
 
-    const [uniqueRecipe, setUniqueRecipe] = useState([]);
+    const [uniqueRecipe, setUniqueRecipe] = useState(null);
     const name = routeProps.match.params.recipe+routeProps.match.params.label;
     // const { recipe } = routeProps.recipes
     // console.log(name);
@@ -29,12 +29,15 @@ export default function Recipe( routeProps ){
         getApiData();
     },[])
 
+    if (!uniqueRecipe){
+        return <h1>Loading...</h1>;
+    }else{
     return (
         <div>
-                <h1>{name}</h1>
-                <img src={uniqueRecipe.image} alt={uniqueRecipe.label} />
-                <p>This recipe can be found <a href={uniqueRecipe.url}target='_blank'>here.</a></p>
-                <ul className='ingredients'>
+            <h1>{name}</h1>
+            <img src={uniqueRecipe.image} alt={uniqueRecipe.label} />
+            <p>This recipe can be found <a href={uniqueRecipe.url}target='_blank'>here.</a></p>
+            <ul className='ingredients'>
                 <h4>Ingredients:</h4>
                     {uniqueRecipe.ingredientLines.map((ingredient, i)=>{
                         return(
@@ -44,18 +47,18 @@ export default function Recipe( routeProps ){
                         )
                     })}
                 </ul>
-                <ul className="diet-labels">
+            <ul className="diet-labels">
                 <h4>Diet Labels:</h4>
-                    {uniqueRecipe.dietLabels.map((label, i)=>{
-                        return(
-                            <li key={i}>
-                                    {label}
-                            </li>
-                        )
-                    })}
-                </ul>
-                <p>Calories: {uniqueRecipe.calories.toFixed(2)}</p>
-                <p>This recipe yield: {uniqueRecipe.yield}</p>
-        </div>
+                {uniqueRecipe.dietLabels.map((label, i)=>{
+                    return(
+                        <li key={i}>
+                                {label}
+                        </li>
+                    )
+                })}
+            </ul>
+            <p>Calories: {uniqueRecipe.calories.toFixed(2)}</p>
+            <p>This recipe yield: {uniqueRecipe.yield}</p>
+    </div>
     )
-}
+}}

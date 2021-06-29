@@ -6,7 +6,7 @@ export default function Navigation (){
     return(
         <Navbar className="nav" collapseOnSelect variant="light" expand="md">
         <Navbar.Brand as={Link} to="/"><h1 className='title'>
-            Nutritious Recipes</h1>
+            COOK ASSISTANT</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">

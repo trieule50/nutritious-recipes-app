@@ -21,6 +21,7 @@ function App() {
     const handleSubmit = (event) => {
         event.preventDefault();
         getApiData(searchString);
+        setSearchString('')
 
     }
 

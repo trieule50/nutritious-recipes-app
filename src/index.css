@@ -86,6 +86,38 @@ form{
   padding: 25px;
 }
 
+/* typing animation from css-tricks.com */
+.fun-animation h4{
+  /* Content stays hidden until animation revealed itself */
+  overflow: hidden; 
+  border-right: .15em solid white;
+  white-space: nowrap;
+  color: white;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 3.5s steps(40, end),
+  blink-caret .75s step-end infinite;
+  background-color: black;
+  height: 25rem;
+  background-image: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
+}
+
+.fun-animation::before{
+  background-size: cover;
+  position: absolute;
+  opacity: .75;
+}
+
+@keyframes typing{
+  from { width: 0}
+  to { width: 100%}
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white}
+}
+
 h1.title, h1{
   font-size: 35px;
   font-family: 'Dosis', sans-serif;
