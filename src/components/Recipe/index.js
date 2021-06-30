@@ -41,7 +41,7 @@ export default function Recipe( routeProps ){
             <p>{uniqueRecipe.calories.toFixed(2)} Calories |  {uniqueRecipe.yield} Servings</p>
             <div className='list'>
                 <ul className='ingredients'>
-                <h4>Ingredients:</h4>
+                <h5>Ingredients:</h5>
                     {uniqueRecipe.ingredientLines.map((ingredient, i)=>{
                         return(
                             <li key={i}>
@@ -51,7 +51,7 @@ export default function Recipe( routeProps ){
                         })}
                 </ul>
                 <ul className="diet-labels">
-                <h4>Diet Labels:</h4>
+                <h5>Diet Labels:</h5>
                     {uniqueRecipe.dietLabels.map((label, i)=>{
                         return(
                             <li key={i}>
@@ -60,52 +60,54 @@ export default function Recipe( routeProps ){
                         )
                     })}
                 </ul>
-            </div>
-            <h4>Nutrient Facts:</h4>
-            <table>
-                <tr>
-                    <th>Nutrients</th>
-                    <th>Amount</th>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.FAT.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.FAT.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.FAT.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.CHOLE.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.CHOLE.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CHOLE.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.NA.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.NA.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.NA.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.CHOCDF.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.CHOCDF.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CHOCDF.unit}</td>
-                </tr> 
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.PROCNT.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.PROCNT.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.PROCNT.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.VITD.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.VITD.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.VITD.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.FE.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.FE.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.FE.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.CA.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.CA.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CA.unit}</td>
-                </tr>
-                <tr>
-                    <td>{uniqueRecipe.totalNutrients.K.label}</td>
-                    <td>{uniqueRecipe.totalNutrients.K.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.K.unit}</td>
-                </tr>
-            </table>
+                <div>   
+                    <h5>Nutrient Facts:</h5>
+                    <table>
+                        <tr>
+                            <th>Nutrients</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.FAT.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.FAT.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.FAT.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.CHOLE.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.CHOLE.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CHOLE.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.NA.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.NA.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.NA.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.CHOCDF.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.CHOCDF.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CHOCDF.unit}</td>
+                        </tr> 
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.PROCNT.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.PROCNT.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.PROCNT.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.VITD.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.VITD.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.VITD.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.FE.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.FE.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.FE.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.CA.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.CA.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CA.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.K.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.K.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.K.unit}</td>
+                        </tr>
+                    </table>
+                </div>
             <button onClick={handleClick} className='link'>Click for Full Recipe</button>
-            <div className='space'></div>
+        </div>
+        <div className='space'></div>
     </div>
     )
 }}

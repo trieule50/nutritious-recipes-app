@@ -58,7 +58,8 @@ export default function Home() {
                             src={data.image}
                             alt={data.label}
                             style={{
-                                width:'75%',
+                                width:'100%',
+                                height: '45vh'
                             }}
                             />
                             <Carousel.Caption>

@@ -32,7 +32,7 @@ export default function Search({ recipes, handleQueryChange, handleQuerySubmit, 
             />
             )}
             {search && error && (
-                <h1>error</h1>
+                <h1>No recipes have been found with that ingredient. Please search another ingredient.</h1>
             )}    
         </div>
     )

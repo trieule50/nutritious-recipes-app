@@ -123,6 +123,28 @@ if (!uniqueRecipe){
 
 3. Error Message for Bad Strings. 
 
+```JS
+if(searchString){
+      try{
+        const response = await fetch(apiEndPoint, {
+          mode: 'cors'
+        });
+        const data = await response.json();
+        setError(false);
+        setRecipes(data.hits);
+        setSearch(true);
+        setSearchString('')
+          if (!data.hits.length){
+            setError(true);
+          }
+        }catch(error){
+            console.log(error);
+            setError(true);
+        }
+      }
+  }
+```
+
 ## Future Directions
 
 ## Accomplishments

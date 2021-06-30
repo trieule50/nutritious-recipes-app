@@ -59,13 +59,6 @@ function App() {
         }
       }
   }
-    // console.log(recipes);
-    console.log(error);
-    // console.log(searchHealth);
-
-    // useEffect(()=>{
-    //     getApiData();
-    // },[])
 
     return (
     <div className="App">
