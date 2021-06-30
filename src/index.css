@@ -104,7 +104,7 @@ form{
   color: white;
   margin: auto;
   letter-spacing: .20em;
-  animation: typing 10s steps(40, end),
+  animation: typing 5s steps(40, end),
   blink-caret .75s step-end infinite;
   display: block;
   width: auto;

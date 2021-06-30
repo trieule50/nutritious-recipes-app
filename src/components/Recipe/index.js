@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function Recipe( routeProps ){
-    console.log(routeProps)
+    // console.log(routeProps)
 
     const [uniqueRecipe, setUniqueRecipe] = useState(null);
     const name = routeProps.match.params.recipe+routeProps.match.params.label;

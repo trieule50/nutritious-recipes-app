@@ -4,20 +4,20 @@ export default function Home() {
 
     const imagesCarousel = [
         {
-            label: "Poppy-seed crusted Chicken",
-            image: "https://www.edamam.com/web-img/369/369b1ba45563c30b2029ddc4eb4de3a5.png"
+            label: "Roast sirloin of beef",
+            image: "https://www.edamam.com/web-img/207/2074a28ff50eba58d79304c9296438a1.jpg"
         },
         {
-            label: "Crisp Prosciutto",
-            image: "https://www.edamam.com/web-img/548/54815a72462a3602eabfcc0120ba5b42.jpg"
+            label: "Beef Cheek Confit With Caramelized Turnips",
+            image: "https://www.edamam.com/web-img/dd6/dd61ac5ef81bd3ca2735ad90e0adc939.jpg"
         },
         {
             label: "Fennel- And Coriander-Spiced Salmon Fillets",
             image: "https://www.edamam.com/web-img/be7/be7cc1a73ffb7e37f8a8d0afb1dc4492.jpg"
         },
         {
-            label: "Asado de Tira",
-            image: "https://www.edamam.com/web-img/5ca/5ca755497de8d74039e002302441d6b1.jpg"
+            label: "Marinated Mozzarella",
+            image: "https://www.edamam.com/web-img/765/765e1d73f81854d3b106f07a9cc8844a.jpg"
         },
         {
             label: "Boiled or Steamed Lobsters",
@@ -32,8 +32,8 @@ export default function Home() {
             image: "https://www.edamam.com/web-img/59e/59ed14aefa30b0b53b23938b151a190b.jpg"
         },
         {
-            label: "Pub-style pork scratchings",
-            image: "https://www.edamam.com/web-img/6c7/6c764aaddab053b8a962b44474cb735d.jpg",
+            label: "Croissant Breakfast Sandwich",
+            image: "https://www.edamam.com/web-img/fb5/fb5099b63ddfdcaa581d261847ee3c1b.jpg",
         },
         {
             label: "Baked Chicken Wings",
