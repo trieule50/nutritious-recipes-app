@@ -19,10 +19,14 @@ a{
   border-radius: 25px; */
   padding: 5px;
   margin-top: 25px;
+  width: auto;
 }
 
 .about-items > img{
   border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
 }
 
 body{
@@ -116,6 +120,7 @@ form{
   margin-left: auto;
   margin-right: auto;
   width: 95%;
+  border-radius: 10px;
 }
 
 @keyframes typing{
@@ -155,7 +160,7 @@ h2.title{
 h3{
   text-align: center;
   margin-top: 25px;
-  font-size: 35px;
+  font-size: 45px;
   font-family: 'Dosis', sans-serif;
 }
 

@@ -86,6 +86,7 @@ const [uniqueRecipe, setUniqueRecipe] = useState(null);
 ```
 
 #### Focusing on User Experience
+1. Creating a responsive App. During my last project, I created an app that was not mobile friendly. With that in mind, this app was to ensure it was responsive. With the help of bootstrap and flex, the app can be view on different media screen. 
 
 #### Lessons Learned
 1. Cut problems into smaller pieces and console.log any unknown data. By writing small lines of code and console.log any data, I understood where the bug located and what output I was receiving. 
@@ -121,9 +122,11 @@ if (!uniqueRecipe){
             <img src={uniqueRecipe.image} alt={uniqueRecipe.label}/>
 ```
 
-3. Error Message for Bad Strings. 
+3. Error Message for Bad Strings. Think about the user experiences, there should be a message to indicate to the user the input does not yield any results. 
 
+By setting a truthy and falsey statement depending on output. I.E if the data.hit yield an array with no length then set props variable error true. Then passing the props down to the 'Search' component to render depending on if the statement is true.
 ```JS
+// App.js
 if(searchString){
       try{
         const response = await fetch(apiEndPoint, {
@@ -143,12 +146,24 @@ if(searchString){
         }
       }
   }
+
+  // Search.js
+  {search && !error &&(
+                <Recipes 
+                recipes={recipes}
+            />
+            )}
+            {search && error && (
+                <h1>No recipes have been found with that ingredient. Please search another ingredient.</h1>
+            )}  
 ```
 
 ## Future Directions
+- 
 
 ## Accomplishments
 - Cook Assistant is fully functional App.
+- Dietary Retriction has been added and is functional.
 - The app is responsive.
 
 ## References
