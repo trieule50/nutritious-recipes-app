@@ -14,8 +14,10 @@ Cook Assistant is a working, interactive, React application that recieved data f
 - Yarn
 
 ## Learning Experience
+1. Cut problems into smaller pieces and console.log any unknown data. By writing small lines of code and console.log any data, I understood where the bug located and what output I was receiving.
+2. Read API documentation. Most of the error are from misinterpreting the data.
 
-### Setting Up Project
+## Setting Up Project
 One of the key feature of React is the compostion of the components. Similar to function in vanilla Javascript, components are reuseable function in React. Before diving into the creating the app, understanding the components hierarchy. 
 
 ![Component Hierarchy 001](https://media.git.generalassemb.ly/user/36270/files/e39c6980-d50a-11eb-8f71-9302d491dad6) 
@@ -35,6 +37,7 @@ By using Edamam, the third party API, the App is able to make dynamic request. F
 One of the element added was the 'mode'. Please reference to Problem Areas of this README for more information. 
 
 ```JS
+// App.js
 const searchOptions = {
         key: process.env.REACT_APP_EDAMAM_KEY,
         id: process.env.REACT_APP_EDAMAM_ID,
@@ -61,6 +64,7 @@ Reference to the Edamam site for more documentation on the API call.
 A second API call was made in the Recipe component. Since there is a route for each individual recipe, each recipe had to match the id. In this case, params was an object that had the key 'recipe' and 'label'. By concat the value, the name matched the id. This allow only one recipe to be render and used.
 
 ```JS
+// Recipe.js
 const [uniqueRecipe, setUniqueRecipe] = useState(null);
     const name = routeProps.match.params.recipe+routeProps.match.params.label;
 
@@ -85,16 +89,35 @@ const [uniqueRecipe, setUniqueRecipe] = useState(null);
     },[])
 ```
 
-#### Focusing on User Experience
-1. Creating a responsive App. During my last project, I created an app that was not mobile friendly. With that in mind, this app was to ensure it was responsive. With the help of bootstrap and flex, the app can be view on different media screen. 
+#### Presenting Data
+For the individual recipe, figuring out what data to include and what to left out is important to the user story and user experience. Cook Assistant is an app that helps user understand the nutrient value/facts for each recipe. 
 
-#### Lessons Learned
-1. Cut problems into smaller pieces and console.log any unknown data. By writing small lines of code and console.log any data, I understood where the bug located and what output I was receiving. 
+```JS
+// Recipe.js
+<table>
+                        <tr>
+                            <th>Nutrients</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.FAT.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.FAT.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.FAT.unit}</td>
+                        </tr>
+                        <tr>
+                            <td>{uniqueRecipe.totalNutrients.CHOLE.label}</td>
+                            <td>{uniqueRecipe.totalNutrients.CHOLE.quantity.toFixed(2)}{uniqueRecipe.totalNutrients.CHOLE.unit}</td>
+                        </tr>
+                        ...
+```
+
+#### Focusing on User Experience
+Creating a responsive App. During my last project, I created an app that was not mobile friendly. With that in mind, this app was to ensure it was responsive. With the help of bootstrap and flex, the app can be view on different media screen.  
 
 ## Problem Areas
 1. One of the problem area was the API call being blocked by the CORS poilcy. Cross-origin resource sharing (CORS) allows the server to indicate other origins. To bypass the error, mode is a read only property that contains different type of mofe of request, one of which is 'cors'.
 
 ```JS
+// App.js
 const getApiData = async () =>{
         const apiEndPoint = `${searchOptions.api}q=${searchString}&app_id=${searchOptions.id}&app_key=${searchOptions.key}&health=${searchHealth}`;
         try{
@@ -113,6 +136,7 @@ const getApiData = async () =>{
 2. Understanding conditional rendering. One of the issue is having fetch statement running before my JSX. To prevent that from happening, conditional rending to show a loading message to allow the request to catch up. 
 
 ```JS
+// Recipe.js
 if (!uniqueRecipe){
         return <h1>Loading...</h1>;
     }else{
@@ -124,7 +148,7 @@ if (!uniqueRecipe){
 
 3. Error Message for Bad Strings. Think about the user experiences, there should be a message to indicate to the user the input does not yield any results. 
 
-By setting a truthy and falsey statement depending on output. I.E if the data.hit yield an array with no length then set props variable error true. Then passing the props down to the 'Search' component to render depending on if the statement is true.
+    By setting a truthy and falsey statement depending on output. I.E if the data.hit yield an array with no length then set props variable error true. Then passing the props down to the 'Search' component to render depending on if the statement is true.
 ```JS
 // App.js
 if(searchString){
