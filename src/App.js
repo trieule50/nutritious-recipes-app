@@ -31,8 +31,10 @@ function App() {
   }
   
   const searchOptions = {
-    key: process.env.REACT_APP_EDAMAM_KEY,
-    id: process.env.REACT_APP_EDAMAM_ID,
+    // key: process.env.REACT_APP_EDAMAM_KEY,
+    // id: process.env.REACT_APP_EDAMAM_ID,
+    key: '81b081b0bc77b859d70b6e2bdb5b0851',
+    id: '48726272',
     api: 'https://api.edamam.com/api/recipes/v2?type=public&'
   }
   
