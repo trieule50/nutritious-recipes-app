@@ -46,10 +46,10 @@ export default function Home() {
             <h3>WELCOME TO COOK ASSISTANT</h3>
             <div className='fun-animation'>
                 <h4>Let's get cooking'</h4>
-            </div>
+            
             <Carousel style={{ 
                 minHeight: '25vh',
-                maxWidth: '75vh'
+                maxWidth: '50vh'
                 }} className='carousel-container'>
                 {imagesCarousel.map((data, i) =>{
                     return(
@@ -59,7 +59,7 @@ export default function Home() {
                             alt={data.label}
                             style={{
                                 width:'100%',
-                                height: '45vh'
+                                height: '40vh'
                             }}
                             />
                             <Carousel.Caption>
@@ -69,6 +69,7 @@ export default function Home() {
                     )
                 })}
             </Carousel>
+            </div>
             <div className='stretch'></div>
         </div>
     )
