@@ -3,16 +3,16 @@ export default function About(){
 
     const imagesCarousel = [
         {
-            label: "Roast sirloin of beef",
-            image: "https://www.edamam.com/web-img/207/2074a28ff50eba58d79304c9296438a1.jpg"
+            label: "Chorizo, caper & rocket pizza",
+            image: "https://www.edamam.com/web-img/7fe/7fee72cbf470edc0089493eb663a7a09.jpg"
         },
         {
             label: "Beef Cheek Confit With Caramelized Turnips",
             image: "https://www.edamam.com/web-img/dd6/dd61ac5ef81bd3ca2735ad90e0adc939.jpg"
         },
         {
-            label: "Fennel- And Coriander-Spiced Salmon Fillets",
-            image: "https://www.edamam.com/web-img/be7/be7cc1a73ffb7e37f8a8d0afb1dc4492.jpg"
+            label: "Rarebit Pork Chops",
+            image: "https://www.edamam.com/web-img/8ea/8eada5e78df7cb6502b1290481388e61.jpg"
         },
         {
             label: "Marinated Mozzarella",
