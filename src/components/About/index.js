@@ -82,6 +82,7 @@ export default function About(){
                     })}
                 </Carousel>
             </div>
+            <div className='space'></div>
         </div>
         </>
     )
