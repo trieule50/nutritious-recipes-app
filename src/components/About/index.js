@@ -44,11 +44,16 @@ export default function About(){
         <>
         <h3>ABOUT</h3>
         <div className='about'>
-            <div className='about-items'>
+            <div style={{
+                margin: 'auto'
+            }}>
                 <p style={{
                     width: '45rem',
                     padding: '25px 0 0 0', 
-                    margin: 'auto'
+                    margin: 'auto',
+                    fontSize: '1.35rem',
+                    inlineSize: '75%',
+                    overflowWrap: 'break-word'
                 }}>
                     <p>
                     Having knowledge on nutrition, not only help with maintaining a healthy weight but it also can help reduce the risk of some disease.
@@ -58,7 +63,7 @@ export default function About(){
                     </p>
                 </p>
             </div>
-            <div className='about-items'>
+            <div>
                 <Carousel style={{ 
                     minHeight: '25vh',
                     maxWidth: '50vh'
