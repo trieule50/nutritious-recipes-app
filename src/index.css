@@ -8,26 +8,6 @@ a{
   text-decoration: none;
 }
 
-.about{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap-reverse;
-}
-
-/* .about-items{
-  border: 3px solid white;
-  border-radius: 25px;
-  padding: 5px;
-  margin-top: 25px;
-  width: auto;
-} */
-
-.about-items > img{
-  border-radius: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-}
 
 .about-items > p{
   font-size: 1.25rem;
@@ -68,7 +48,6 @@ button > img{
 }
 
 .carousel-container{
-  /* background-color: rgb(77, 127, 147); */
   margin: 50px auto;
   border-radius: 25px;
 }
@@ -120,7 +99,7 @@ form{
 .fun-animation{
   background-image: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
   background-size: cover;
-  height: 50rem;
+  height: 30rem;
   margin-left: auto;
   margin-right: auto;
   width: 95%;
