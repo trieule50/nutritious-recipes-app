@@ -56,10 +56,10 @@ export default function About(){
                     overflowWrap: 'break-word'
                 }}>
                     <p>
-                    Having knowledge on nutrition, not only help with maintaining a healthy weight but it also can help reduce the risk of some disease.
+                    Having knowledge on nutrition, not only help with maintaining a healthy weight but it also can help reduce the risk of some diseases.
                     </p>
                     <p>
-                    Cook Assistant is an app that allows anyone to search up recipes based on their dietary needs or their choice in ingredients by uses data from Edamam API. For more information regarding the API, please go to the Edamam website.
+                    Cook Assistant is an app that allows users to find a recipe that fits their dietary needs or recipes on any key ingredient by using data from Edamam API. For more information regarding the API, please go to the Edamam website.
                     </p>
                 </p>
             </div>
