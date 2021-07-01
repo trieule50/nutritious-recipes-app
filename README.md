@@ -183,7 +183,8 @@ if(searchString){
 ```
 
 ## Future Directions
-- 
+- Creating a 'Favorite' Section (In-progress)
+- Using another API call that allows the user to search food products via barcode or string search to get the nutrition facts.
 
 ## Accomplishments
 - Cook Assistant is fully functional App.
